@@ -1,0 +1,6 @@
+POST http://localhost:3339/api/v1/count
+Accept: application/json
+
+{"text":"The XDA Developers forums have been used by members of the Lineage community since the software's inception. Many devices are left unsupported by official releases socommunitymembers develop their own unofficial ROMs allowing older phones to use Lineage. These unofficial releases are often bundled withsoftwareintended to aid the user's experience that would otherwise be unseen in an official release. They also come with known bugs and security issues that may not be seen in official releases"}
+
+###
