@@ -22,6 +22,8 @@ func countWords(reader io.Reader) []Item {
 		word := scanner.Text()
 
 		item, ok := wordmap[word]
+
+		//if word is not found insert
 		if !ok {
 			item = &Item{
 				Value: word,
@@ -30,7 +32,7 @@ func countWords(reader io.Reader) []Item {
 			wordmap[word] = item
 			pq.Push(item)
 
-		} else {
+		} else { //if word is found update the "count"
 			item.Count += 1
 			wordmap[word] = item
 			pq.update(item, word, item.Count)
@@ -39,6 +41,7 @@ func countWords(reader io.Reader) []Item {
 
 	result := make([]Item, 0)
 
+	// pop top 10 values into a new slice
 	for pq.Len() > 0 && len(result) < 10 {
 		item := heap.Pop(&pq).(*Item)
 		result = append(result, *item)
